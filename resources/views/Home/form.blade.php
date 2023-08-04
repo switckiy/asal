@@ -42,7 +42,7 @@
                 </div>
               </div>
               <div class="row mb-3">
-                <label class="col-sm-2 col-form-label" for="basic-icon-default-company">Company</label>
+                <label class="col-sm-2 col-form-label" for="basic-icon-default-company">Name Radio</label>
                 <div class="col-sm-10">
                   <div class="input-group input-group-merge">
                     <span id="basic-icon-default-company2" class="input-group-text"
@@ -95,7 +95,7 @@
                 </div>
               </div>
               <div class="row mb-3">
-                <label class="col-sm-2 form-label" for="basic-icon-default-phone">s</label>
+                <label class="col-sm-2 form-label" for="basic-icon-default-phone">Help Topic</label>
                 <div class="col-sm-10">
                   <div class="input-group input-group-merge">
                     <span id="basic-icon-default-phone2" class="input-group-text"
@@ -113,7 +113,7 @@
               </div>
 
               <div class="row mb-3"     >
-                <label class="col-sm-2 form-label" for="basic-icon-default-message">Message</label>
+                <label class="col-sm-2 form-label" for="basic-icon-default-message">Description</label>
                 <div class="col-sm-10">
                   <div class="input-group input-group-merge">
                     <span id="basic-icon-default-message2" class="input-group-text"
