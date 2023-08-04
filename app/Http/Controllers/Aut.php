@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 
 class Aut extends Controller
 {
@@ -33,14 +36,19 @@ class Aut extends Controller
         $validated = $request->validate([
             'name' => 'required|max:255',
             'radio' => 'required|max:255',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'username' => 'required|unique:users|max:255',
             'email' => 'required|unique:users|email:dns',
             'password' => 'required|min:5|max:255'
         ]);
 
-        // The blog post is valid...
+        
+        $validated['password'] = Hash::make($validated['password']); 
 
-        dd('berhasil');
+        User::create($validated);
+
+        // $request->session()->flash('success', 'Registrasion success');
+        return redirect('login')->with('success', 'Registrasion success');
     }
     public function auth(Request $request)
     {

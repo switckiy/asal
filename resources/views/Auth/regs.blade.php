@@ -67,6 +67,24 @@
                     @enderror
                 </div>
                 <div class="mb-3">
+                  <label for="phone" class="form-label">phone</label>
+                  <input
+                    type="text"
+                    class="form-control @error('phone')
+                    is-invalid
+                    @enderror"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter your phone"
+                    autofocus
+                  />
+                  @error('phone')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
+                <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
                   <input type="text" class="form-control  @error('email')
                   is-invalid
@@ -94,21 +112,13 @@
                   </div>
                 </div>
 
-                <div class="mb-3">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
-                    <label class="form-check-label" for="terms-conditions">
-                      I agree to
-                      <a href="javascript:void(0);">privacy policy & terms</a>
-                    </label>
-                  </div>
-                </div>
+                <br>
                 <button class="btn btn-primary d-grid w-100">Sign up</button>
               </form>
 
               <p class="text-center">
                 <span>Already have an account?</span>
-                <a href="auth-login-basic.html">
+                <a href="login">
                   <span>Sign in instead</span>
                 </a>
               </p>
