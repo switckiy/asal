@@ -13,4 +13,11 @@ class dashboard extends Controller
             'Admin.index'
         );
     }
+    public function topic()
+    {
+
+        return view(
+            'Admin.topic'
+        );
+    }
 }

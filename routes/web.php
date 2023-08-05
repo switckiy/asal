@@ -27,3 +27,4 @@ Route::post('reg', [Aut::class, 'regis']);
 Route::post('logout', [Aut::class, 'logout']);
 
 Route::get('dashboard', [Dashboard::class, 'index'])->middleware('auth');
+Route::get('Topic', [Dashboard::class, 'topic'])->middleware('auth');
