@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\TopicAdd;
 
 class Home extends Controller
 {
@@ -18,12 +19,14 @@ class Home extends Controller
     }
     public function form()
     {
+        $topics = TopicAdd::all();
 
         return view(
             'home.form',
             [
                 "title" => "Ticket"
-            ]
+            ],
+            compact('topics')
         );
     }
     public function faq()

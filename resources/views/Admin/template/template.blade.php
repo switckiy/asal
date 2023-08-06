@@ -47,6 +47,8 @@
 
     <!-- Helpers -->
     <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
@@ -251,7 +253,7 @@
               </ul>
             </li>
             <!-- Tables -->
-            
+
             <!-- Misc -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
             <li class="menu-item">

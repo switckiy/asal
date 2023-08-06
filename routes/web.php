@@ -27,4 +27,6 @@ Route::post('reg', [Aut::class, 'regis']);
 Route::post('logout', [Aut::class, 'logout']);
 
 Route::get('dashboard', [Dashboard::class, 'index'])->middleware('auth');
-Route::get('Topic', [Dashboard::class, 'topic'])->middleware('auth');
+Route::get('Topic', [Dashboard::class, 'topic'])->name('Topic')->middleware('auth');
+Route::post('addtopic', [Dashboard::class, 'addtopic'])->name('addtopic')->middleware('auth');
+Route::delete('deletetopic/{id}', [Dashboard::class, 'deletetopic'])->name('deletetopic')->middleware('auth');
