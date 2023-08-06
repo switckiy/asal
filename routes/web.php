@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [Home::class, 'index']);
 Route::get('form', [Home::class, 'form']);
+Route::post('form', [Home::class, 'submitForm'])->name('form');
 Route::get('faq', [Home::class, 'faq']);
 
 Route::get('login', [Aut::class, 'index'])->name('login')->middleware('guest');

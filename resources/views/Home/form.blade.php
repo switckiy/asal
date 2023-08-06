@@ -13,6 +13,14 @@
     <!-- Layout Demo -->
     <div class="layout-demo-wrapper">
       <div class="col-md-7 col-lg-8 mb-8">
+        @if (session()->has('success'))
+
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+      @endif
 <div class="card">
 <div class="card-body">
 <blockquote class="blockquote mb-0">
@@ -21,8 +29,13 @@
           <div class="card-header d-flex align-items-center justify-content-between">
 
           </div>
-          <div class="card-body">
-            <form>
+        <div class="card-body">
+            <form action="{{ route('form') }}" method="post">
+                @csrf
+
+                <!-- Add a hidden input field to store the user ID -->
+                <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+
 
             <!-- name Form -->
               <div class="row mb-3">
@@ -165,7 +178,7 @@
                 <div class="col-sm-10">
                     <div class="input-group input-group-merge">
                         <span id="basic-icon-default-phone2" class="input-group-text"><i class="bx bx-phone"></i></span>
-                        <select id="topic" class="select2 form-select">
+                        <select id="topic" name="topic_id" class="select2 form-select">
                             <option value="">Select Topic</option>
                             @foreach ($topics as $topic)
                             <option value="{{ $topic->id }}">{{ $topic->name }}</option>
@@ -189,6 +202,7 @@
                       placeholder="Hi, Do you have a moment to talk Joe?"
                       aria-label="Hi, Do you have a moment to talk Joe?"
                       aria-describedby="basic-icon-default-message2"
+                      name="message"
                     ></textarea>
                   </div>
                 </div>
@@ -206,6 +220,7 @@
                       class="form-control"
                       aria-label="Upload File"
                       aria-describedby="file-input-icon"
+                      name="file"
                     >
                   </div>
                 </div>

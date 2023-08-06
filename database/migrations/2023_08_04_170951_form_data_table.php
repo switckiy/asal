@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('user_id');
             $table->integer('topic_id');
             $table->string('massage');
+            $table->string('file');
             $table->timestamps();
         });
     }
